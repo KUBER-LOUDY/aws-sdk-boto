@@ -26,7 +26,7 @@ async def regist_iam_user(req: scheme.IamReq):
         "message":"created well."
     }
 
-@app.get("/vpc")
+@app.post("/vpc")
 async def get_vpcs(req: scheme.Ec2Req):
     os.environ['AWS_PROFILE'] = req.profile
     client = boto3.client('ec2', region_name = 'ap-northeast-2')
