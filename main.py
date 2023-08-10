@@ -67,6 +67,9 @@ async def create_standard_ec2(req: scheme.Ec2Req):
         Monitoring={
             'Enabled': False
         },
+        SecurityGroups=[
+            'KUBERLOUDY_SECURITY_GROUP',
+        ],
     )
     
     return response
